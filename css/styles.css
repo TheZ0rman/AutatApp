@@ -1,0 +1,464 @@
+:root {
+    --color-pastel-bg: #E2F0F9;
+    --color-pastel-text: #5E548E;
+    --color-contraste-bg: #000;
+    --color-rosa-bg: #ffc9e7;
+    --color-azul-bg: #D6EAF8;
+    --color-arena-bg: #FDEBD0;
+    --color-lavanda-bg: #EBDEF0;
+    --color-contraste-text: #FFF;
+    --color-primary: #84A59D; /* Verde original */
+    --color-primary-azul: #5DADE2;
+    --color-primary-naranja: #F5B041;
+    --color-primary-morado: #9B59B6;
+    --color-primary-rojo: #EC7063;
+    --color-primary-turquesa: #48C9B0;
+    --color-secondary: #F8EDEB;
+    --color-activity: #4CC9F0;
+}
+
+body {
+    font-family: 'Patrick Hand', cursive;
+    background-color: var(--color-pastel-bg);
+    color: var(--color-pastel-text);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Config Container Styles */
+.config-container {
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Menu Container Styles */
+.menu-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+}
+
+/* Common Panel Styles */
+.welcome-panel {
+    background: linear-gradient(135deg, var(--color-primary), #68A891);
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-panel h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.instruction-box {
+    background: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.instruction-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.instruction-box li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.instruction-box li:before {
+    position: absolute;
+    left: 0;
+}
+
+.decoration {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.math-icon {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+/* Settings Panel Specific */
+.settings-panel {
+    padding: 40px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.theme-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.theme-options button {
+    flex: 1;
+    min-width: 100px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.theme-options button.active {
+    border-color: var(--color-primary);
+}
+
+.theme-demo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn-guardar {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 1.2rem;
+}
+
+/* Menu Specific Styles */
+.user-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#menu-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+#menu-nombre {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.progreso {
+    text-align: right;
+}
+
+.barra-progreso {
+    width: 150px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.relleno {
+    height: 100%;
+    width: 30%;
+    background-color: white;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.activities-panel {
+    padding: 30px;
+}
+
+.activities-panel h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.actividades {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.actividad {
+    background-color: var(--color-secondary);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.actividad:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: var(--color-primary);
+}
+
+.actividad img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.actividad h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-pastel-text);
+}
+
+/* Estilos para el switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+/* ============================
+   ESTILOS PARA NOMBRE + AVATAR
+   ============================ */
+
+.nombre-avatar-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Campo de nombre toma el espacio restante */
+.nombre-avatar-group .name-field {
+    flex: 1;
+}
+
+/* Sección de avatar (a la derecha) */
+.avatar-section {
+    width: 220px; /* espacio a la derecha del nombre */
+}
+
+.avatar-carousel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 6px 4px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    flex: 1;
+}
+
+/* avatar item */
+.avatar-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    min-height: 64px;
+    padding: 4px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.avatar-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.avatar-item img.selected {
+    border-color: var(--color-primary);
+    transform: scale(1.08);
+}
+
+/* botones prev/next del carrusel */
+.avatar-btn {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.avatar-btn:hover {
+    background: var(--color-primary-azul);
+}
+
+/* ocultar scrollbar en navegadores Webkit para que se vea más limpio */
+.avatar-track::-webkit-scrollbar {
+    height: 8px;
+}
+.avatar-track::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.08);
+    border-radius: 10px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 800px) {
+    .config-container, .menu-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nombre-avatar-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .avatar-section {
+        width: 100%;
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.user-info:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.progreso {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.actividades-completadas {
+    background-color: rgba(255,255,255,0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.actividades-completadas span {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Responsive Updates */
+@media (max-width: 600px) {
+    .user-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .progreso {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

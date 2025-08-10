@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Divisiones | Matemáticas Divertidas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="user-header">
+    <div class="user-info">
+      <img id="menu-avatar" src="assets/img/avatars/avatar1.png" alt="Avatar">
+      <div>
+        <div id="menu-nombre" class="menu-nombre">Niño</div>
+        <div class="small">Actividad: Divisiones</div>
+      </div>
+    </div>
+    <div class="progreso">
+      <p>Progreso</p>
+      <div class="barra-progreso">
+        <div class="relleno" id="barra-actividad" style="width:0%"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="game-page">
+    <div class="game-area">
+      <div class="track">
+        <img src="assets/img/character.png" id="character" class="character" alt="Personaje">
+        <img src="assets/img/obstacle.png" id="obstacle" class="obstacle" alt="Obstáculo">
+      </div>
+
+      <div class="question-card">
+        <div id="question" class="question">¿Cuánto es 6 ÷ 2 ?</div>
+        <div class="answers" id="answers"></div>
+      </div>
+
+      <div class="controls">
+        <button id="nextLevel" class="btn-guardar" disabled>Siguiente obstáculo</button>
+        <button id="backMenu" class="btn-secondary">Volver al menú</button>
+      </div>
+    </div>
+  </main>
+
+  <audio id="sound-correct" src="assets/sounds/correct.mp3"></audio>
+  <audio id="sound-wrong" src="assets/sounds/wrong.mp3"></audio>
+
+  <script src="js/main.js"></script>
+  <script src="js/game.js"></script>
+  <script>initActivity('divisiones');</script>
+</body>
+</html>

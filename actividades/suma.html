@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sumas | Matemáticas Divertidas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/suma.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand:wght@400;700&family=Comic+Neue:wght@400;700&display=swap">
+</head>
+<body>
+    <header class="user-header">
+        <div class="user-info profile-btn">
+            <img id="menu-avatar" src="../assets/img/avatars/avatar1.png" alt="Avatar">
+            <span id="menu-nombre"></span>
+        </div>
+        <div class="progreso">
+            <p>Progreso: <span id="porcentaje">0%</span></p>
+            <div class="barra-progreso">
+                <div class="relleno"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="suma-container">
+        <div class="activity-header">
+            <h1>¡Aprende a Sumar!</h1>
+            <div class="level-selector">
+                <button class="level-btn" data-level="1">Nivel 1</button>
+                <button class="level-btn" data-level="2">Nivel 2</button>
+                <button class="level-btn" data-level="3">Nivel 3</button>
+            </div>
+        </div>
+
+        <div class="timer-container" id="timer-container">
+            <div class="timer-bar" id="timer-bar"></div>
+        </div>
+
+        <div class="game-area">
+            <div class="exercise-display">
+                <div class="exercise">
+                    <span class="number" id="num1">5</span>
+                    <span class="operator">+</span>
+                    <span class="number" id="num2">3</span>
+                    <span class="operator">=</span>
+                    <input type="number" id="answer" class="answer-input" min="0" max="20">
+                </div>
+                <div class="visual-help">
+                    <div class="counters" id="counters1"></div>
+                    <span class="operator">+</span>
+                    <div class="counters" id="counters2"></div>
+                </div>
+            </div>
+
+            <div class="feedback">
+                <div id="result-message"></div>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="score">
+                    Puntos: <span id="points">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="help-box" id="help-box">
+            <h3>¿Cómo sumar?</h3>
+            <div id="help-content"></div>
+            <button id="close-help" class="control-btn">Entendido</button>
+        </div>
+
+        <div class="controls">
+            <button id="check-btn" class="control-btn">Comprobar</button>
+            <button id="next-btn" class="control-btn">Siguiente</button>
+            <button id="help-btn" class="control-btn">Ayuda</button>
+        </div>
+
+        <div class="number-pad">
+            <button class="num-btn">1</button>
+            <button class="num-btn">2</button>
+            <button class="num-btn">3</button>
+            <button class="num-btn">4</button>
+            <button class="num-btn">5</button>
+            <button class="num-btn">6</button>
+            <button class="num-btn">7</button>
+            <button class="num-btn">8</button>
+            <button class="num-btn">9</button>
+            <button class="num-btn">0</button>
+            <button class="num-btn" id="clear-btn">⌫</button>
+        </div>
+    </div>
+
+    <audio id="correct-sound" src="../assets/sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="../assets/sounds/wrong.mp3"></audio>
+    <audio id="success-sound" src="../assets/sounds/success.mp3"></audio>
+    <audio id="tick-sound" src="../assets/sounds/tick.mp3"></audio>
+    <audio id="timeup-sound" src="../assets/sounds/timeup.mp3"></audio>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

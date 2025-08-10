@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Matemáticas para Niños | Configuración</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand:wght@400;700&family=Comic+Neue:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="config-container">
+        <div class="welcome-panel">
+            <br><br><br>
+            <h1>¡Bienvenido, Tutor!</h1>
+            <div class="instruction-box">
+                <p>Este sistema ayuda a niños con autismo a aprender matemáticas de forma adaptativa. Configura:</p>
+                <ul>
+                    <li><strong>Nombre</strong> para personalizar</li>
+                    <li><strong>Avatar</strong> divertido</li>
+                    <li><strong>Tema visual</strong> cómodo</li>
+                    <li><strong>Color de acento</strong> para paneles</li>
+                    <li><strong>Sonidos</strong> de refuerzo</li>
+                </ul>
+            </div>
+            <div class="decoration">
+                <div class="math-icon">➕</div>
+                <div class="math-icon">➖</div>
+            </div>
+        </div>
+
+        <div class="settings-panel">
+            <h2>Personalización</h2>
+
+            <!-- Grupo: Nombre + Avatar (avatar a la derecha) -->
+            <div class="input-group nombre-avatar-group">
+                <div class="name-field">
+                    <label for="nombre">Nombre del niño:</label>
+                    <input type="text" id="nombre" placeholder="Ej: Luis" required>
+                </div>
+
+                <div class="avatar-section">
+                    <label>Avatar:</label>
+                    <div class="avatar-carousel" aria-label="Selector de avatares">
+                        <button type="button" class="avatar-btn" id="avatar-prev" aria-label="Anterior">&#8249;</button>
+                        <div class="avatar-track" id="avatar-track" role="list"></div>
+                        <button type="button" class="avatar-btn" id="avatar-next" aria-label="Siguiente">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temas -->
+            <div class="input-group">
+                <label>Tema visual:</label>
+                <div class="theme-options">
+                    <button data-tema="pastel" class="active">
+                        <span class="theme-demo" style="background: #E2F0F9;"></span>
+                        Pastel
+                    </button>
+                    <button data-tema="contraste">
+                        <span class="theme-demo" style="background: #000;"></span>
+                        Contraste
+                    </button>
+                    <button data-tema="rosa">
+                        <span class="theme-demo" style="background: #ffc9e7;"></span>
+                        Rosa
+                    </button>
+                    <button data-tema="azul">
+                        <span class="theme-demo" style="background: #D6EAF8;"></span>
+                        Azul
+                    </button>
+                    <button data-tema="arena">
+                        <span class="theme-demo" style="background: #FDEBD0;"></span>
+                        Arena
+                    </button>
+                    <button data-tema="lavanda">
+                        <span class="theme-demo" style="background: #EBDEF0;"></span>
+                        Lavanda
+                    </button>
+                </div>
+            </div>
+
+            <!-- Colores -->
+            <div class="input-group">
+                <label>Color de acento:</label>
+                <div class="theme-options">
+                    <button data-color="verde" class="active">
+                        <span class="theme-demo" style="background: #84A59D;"></span>
+                        Verde
+                    </button>
+                    <button data-color="azul">
+                        <span class="theme-demo" style="background: #5DADE2;"></span>
+                        Azul
+                    </button>
+                    <button data-color="naranja">
+                        <span class="theme-demo" style="background: #F5B041;"></span>
+                        Naranja
+                    </button>
+                    <button data-color="morado">
+                        <span class="theme-demo" style="background: #9B59B6;"></span>
+                        Morado
+                    </button>
+                    <button data-color="rojo">
+                        <span class="theme-demo" style="background: #EC7063;"></span>
+                        Rojo
+                    </button>
+                    <button data-color="turquesa">
+                        <span class="theme-demo" style="background: #48C9B0;"></span>
+                        Turquesa
+                    </button>
+                </div>
+            </div>
+
+            <div class="input-group switch-group">
+                <label>Sonidos:</label>
+                <label class="switch">
+                    <input type="checkbox" id="sonidos" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <button id="guardar" class="btn-guardar">
+                <span>¡Comenzar!</span>
+                <span class="icon">→</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

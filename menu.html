@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Menú | Matemáticas Divertidas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand:wght@400;700&family=Comic+Neue:wght@400;700&display=swap">
+</head>
+<body>
+    <header class="user-header">
+        <div class="user-info" id="profile-btn">
+            <img id="menu-avatar" src="assets/img/avatars/avatar1.png" alt="Avatar">
+            <span id="menu-nombre"></span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div class="progreso">
+            <div class="actividades-completadas">
+                <span id="actividades-count">0</span> actividades
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú desplegable del perfil -->
+    <div class="profile-dropdown" id="profile-dropdown">
+        <div class="dropdown-item" id="stats-btn">
+            <span>Mis Estadísticas</span>
+        </div>
+        <div class="dropdown-item" id="avatar-btn">
+            <span>Cambiar Avatar</span>
+        </div>
+        <div class="dropdown-item" id="colors-btn">
+            <span>Cambiar Colores</span>
+        </div>
+    </div>
+
+    <!-- Overlay para las pantallas flotantes -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Pantalla flotante de Estadísticas -->
+    <div class="floating-panel" id="stats-panel">
+        <div class="panel-header">
+            <h2>Mis Estadísticas</h2>
+            <button class="close-btn" id="close-stats">×</button>
+        </div>
+        <div class="stats-container">
+            <div class="stat-card">
+                <img src="assets/img/icons/suma.png" alt="Sumas">
+                <div class="stat-info">
+                    <h3>Sumas</h3>
+                    <div class="stat-numbers">
+                        <span class="correct" id="sumas-correctas">0</span>
+                        <span class="separator">/</span>
+                        <span class="incorrect" id="sumas-incorrectas">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <img src="assets/img/icons/resta.png" alt="Restas">
+                <div class="stat-info">
+                    <h3>Restas</h3>
+                    <div class="stat-numbers">
+                        <span class="correct" id="restas-correctas">0</span>
+                        <span class="separator">/</span>
+                        <span class="incorrect" id="restas-incorrectas">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <img src="assets/img/icons/multiplicacion.png" alt="Multiplicación">
+                <div class="stat-info">
+                    <h3>Multiplicación</h3>
+                    <div class="stat-numbers">
+                        <span class="correct" id="multiplicacion-correctas">0</span>
+                        <span class="separator">/</span>
+                        <span class="incorrect" id="multiplicacion-incorrectas">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <img src="assets/img/icons/division.png" alt="División">
+                <div class="stat-info">
+                    <h3>División</h3>
+                    <div class="stat-numbers">
+                        <span class="correct" id="division-correctas">0</span>
+                        <span class="separator">/</span>
+                        <span class="incorrect" id="division-incorrectas">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla flotante de Cambiar Avatar -->
+    <div class="floating-panel" id="avatar-panel">
+        <div class="panel-header">
+            <h2>Cambiar Avatar</h2>
+            <button class="close-btn" id="close-avatar">×</button>
+        </div>
+        <div class="avatar-options" id="avatar-options"></div>
+        <button class="btn-guardar" id="save-avatar">Guardar</button>
+    </div>
+
+    <!-- Pantalla flotante de Cambiar Colores -->
+    <div class="floating-panel" id="colors-panel">
+        <div class="panel-header">
+            <h2>Cambiar Colores</h2>
+            <button class="close-btn" id="close-colors">×</button>
+        </div>
+        <div class="color-options">
+            <div class="color-group">
+                <h3>Tema visual:</h3>
+                <div class="theme-options">
+                    <button data-tema="pastel" class="active">
+                        <span class="theme-demo" style="background: #E2F0F9;"></span>
+                        Pastel
+                    </button>
+                    <button data-tema="contraste">
+                        <span class="theme-demo" style="background: #000;"></span>
+                        Contraste
+                    </button>
+                    <button data-tema="rosa">
+                        <span class="theme-demo" style="background: #ffc9e7;"></span>
+                        Rosa
+                    </button>
+                </div>
+            </div>
+            <div class="color-group">
+                <h3>Color de acento:</h3>
+                <div class="theme-options">
+                    <button data-color="verde" class="active">
+                        <span class="theme-demo" style="background: #84A59D;"></span>
+                        Verde
+                    </button>
+                    <button data-color="azul">
+                        <span class="theme-demo" style="background: #5DADE2;"></span>
+                        Azul
+                    </button>
+                    <button data-color="naranja">
+                        <span class="theme-demo" style="background: #F5B041;"></span>
+                        Naranja
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="btn-guardar" id="save-colors">Guardar</button>
+    </div>
+
+    <!-- Contenido principal del menú -->
+    <div class="menu-container">
+        <div class="welcome-panel">
+            <br><br><br><br>
+            <h1>¡Hola, <span id="nombre-usuario"></span>!</h1>
+            <div class="instruction-box">
+                <p>Elige una actividad para comenzar a aprender:</p>
+                <ul>
+                    <li>Divertidos ejercicios</li>
+                    <li>Diseño adaptado para ti</li>
+                    <li>Gana estrellas por completar actividades</li>
+                </ul>
+            </div>
+            <div class="decoration">
+                <div class="math-icon">🔢</div>
+                <div class="math-icon">🧩</div>
+            </div>
+        </div>
+
+        <div class="activities-panel">
+            <h2>Actividades</h2>
+            <div class="actividades">
+                <div class="actividad" data-actividad="suma">
+                    <img src="assets/img/icons/suma.png" alt="sumas">
+                    <h3>Sumas</h3>
+                </div>
+
+                <div class="actividad" data-actividad="resta">
+                    <img src="assets/img/icons/resta.png" alt="Restas">
+                    <h3>Restas</h3>
+                </div>
+
+                <div class="actividad" data-actividad="multiplicacion">
+                    <img src="assets/img/icons/multiplicacion.png" alt="multiplicaciones">
+                    <h3>Multiplicaciones</h3>
+                </div>
+
+                <div class="actividad" data-actividad="division">
+                    <img src="assets/img/icons/division.png" alt="Divisiones">
+                    <h3>Divisiones</h3>
+                </div>
+
+                <div class="actividad" data-actividad="patrones">
+                    <img src="assets/img/icons/patrones.png" alt="Patrones">
+                    <h3>Patrones</h3>
+                </div>
+
+                <div class="actividad" data-actividad="contar">
+                    <img src="assets/img/icons/contar.png" alt="Contar">
+                    <h3>Contar</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
